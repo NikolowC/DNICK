@@ -1,42 +1,58 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>{{ book.title }}</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap/css/bootstrap.css' %}"/>
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/bootstrap/css/bootstrap.css' %}"
+    />
     <script src="{% static 'bootstrap/bootstrap/js/bootstrap.bundle.js' %}"></script>
-</head>
-<body>
-<div class="row bg-primary py-5 justify-content-center text-center">
-    <img src="{% static 'default.jpeg' %}" style="width: 450px" alt="Default Image"/>
-</div>
-<div class="row bg-primary-subtle py-3 text-center">
-    <h1>Те знам</h1>
-</div>
-<div class="container py-5">
-    <a href="{% url 'index' %}" class="btn btn-secondary mb-4">Назад</a>
-    <div class="row">
+  </head>
+  <body>
+    <div class="row bg-primary py-5 justify-content-center text-center">
+      <img
+        src="{% static 'default.jpeg' %}"
+        style="width: 450px"
+        alt="Default Image"
+      />
+    </div>
+    <div class="row bg-primary-subtle py-3 text-center">
+      <h2>{{ book.title }}</h2>
+    </div>
+    <div class="container py-5">
+      <a href="{% url 'index' %}" class="btn btn-secondary mb-4">Назад</a>
+      <div class="row">
         <div class="col-6">
-            {% if book.image %}
-                <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid rounded"
-                     style="max-height: 400px; object-fit: contain;">
-            {% else %}
-                <div class="bg-light d-flex justify-content-center align-items-center" style="height: 400px;">
-                    <p>Нема слика</p>
-                </div>
-            {% endif %}
+          {% if book.image %}
+          <img
+            src="{{ book.image.url }}"
+            alt="{{ book.title }}"
+            class="img-fluid rounded"
+            style="max-height: 400px; object-fit: contain"
+          />
+          {% else %}
+          <div
+            class="bg-light d-flex justify-content-center align-items-center"
+            style="height: 400px"
+          >
+            <p>Нема слика</p>
+          </div>
+          {% endif %}
         </div>
         <div class="col-6 px-5">
-            <h2>{{ book.title }}</h2>
-            <p><strong>Цена:</strong> {{ book.price }} ден.</p>
-            <p><strong>Категорија:</strong> {{ book.get_category_book_display }}</p>
-            <p><strong>Година на издавање:</strong> {{ book.year_release }}</p>
-            <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-            <p><strong>Број на страници:</strong> {{ book.number_of_pages }}</p>
-            <p><strong>Димензии:</strong> {{ book.book_dimensions }}</p>
+          <h2>{{ book.title }}</h2>
+          <p><strong>Цена:</strong> {{ book.price }} ден.</p>
+          <p>
+            <strong>Категорија:</strong> {{ book.get_category_book_display }}
+          </p>
+          <p><strong>Година на издавање:</strong> {{ book.year_release }}</p>
+          <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+          <p><strong>Број на страници:</strong> {{ book.number_of_pages }}</p>
+          <p><strong>Димензии:</strong> {{ book.book_dimensions }}</p>
         </div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>

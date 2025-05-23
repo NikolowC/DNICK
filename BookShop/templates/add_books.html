@@ -1,26 +1,32 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap/css/bootstrap.css' %}"/>
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/bootstrap/css/bootstrap.css' %}"
+    />
     <script src="{% static 'bootstrap/bootstrap/js/bootstrap.bundle.js' %}"></script>
-</head>
-<body>
-<div class="row bg-primary py-5 justify-content-center text-center">
-    <img src="{% static 'default.jpeg' %}" style="width: 450px">
-</div>
-<div class="row bg-primary-subtle py-3 text-center">
-    <h1>Додај нова книга</h1>
-</div>
-<div class="row d-flex justify-content-center bg-secondary-subtle">
-    <form method="post" action="{% url 'add_books' %}" enctype="multipart/form-data"
-          class="p-5 w-50">
-        {% csrf_token %}
-        {{ form.as_p }}
+  </head>
+  <body>
+    <div class="row bg-primary py-5 justify-content-center text-center">
+      <img src="{% static 'default.jpeg' %}" style="width: 450px" />
+    </div>
+    <div class="row bg-primary-subtle py-3 text-center">
+      <h1>Додај нова книга</h1>
+    </div>
+    <div class="row d-flex justify-content-center bg-secondary-subtle">
+      <form
+        method="post"
+        action="{% url 'add_books' %}"
+        enctype="multipart/form-data"
+        class="p-5 w-50"
+      >
+        {% csrf_token %} {{ form.as_p }}
         <button type="submit" class="btn btn-warning">Додај книга</button>
-    </form>
-</div>
-</body>
+      </form>
+    </div>
+  </body>
 </html>
