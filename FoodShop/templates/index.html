@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}" />
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <title>Food Shop</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="btn-group w-100 ms-5 p-5">
+            <button
+              class="btn btn-secondary dropdown-toggle fw-bold"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background-color: green"
+            >
+              All departments
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Fresh meat</a></li>
+              <li><a class="dropdown-item" href="#">Vegetables</a></li>
+              <li><a class="dropdown-item" href="#">Fruits & Nut Gifts</a></li>
+              <li><a class="dropdown-item" href="#">Fresh Berries</a></li>
+              <li><a class="dropdown-item" href="#">Ocean foods</a></li>
+              <li><a class="dropdown-item" href="#">Butter & Eggs</a></li>
+              <li><a class="dropdown-item" href="#">Fresh onion</a></li>
+              <li><a class="dropdown-item" href="#">Oatmeal</a></li>
+              <li><a class="dropdown-item" href="#">Fresh Bananas</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="col-9 mt-5 p-5"
+          style="
+            background-image: url('/static/banner.jpg');
+            background-size: cover;
+          "
+        >
+          <h5 class="fw-bold ms-5 mt-5" style="color: green">FRUIT FRESH</h5>
+          <h2 class="fw-bold ms-5 mt-2 w-25">Vegetable 100% Organic</h2>
+          <p class="fw-bold mt-4 ms-5">Free pickup and delivery available</p>
+          <button
+            class="btn fw-bold text-white ms-5 mt-2 w-25 mb-5"
+            style="background-color: green"
+          >
+            SHOP NOW
+          </button>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center mt-5 fw-bold">From the Blog</h1>
+    <div class="container d-flex justify-content-center">
+      <div class="row">
+        <div class="card m-5" style="width: 300px; border: none">
+          <img src="{% static 'blog-1.jpg' %}" class="card-img-top" alt="..." />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Cooking tips make cooking simple</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title.
+            </p>
+          </div>
+        </div>
+        <div class="card m-5" style="width: 18rem; border: none">
+          <img src="{% static 'blog-2.jpg' %}" class="card-img-top" alt="..." />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">
+              6 ways to prepare breakfast for 30
+            </h5>
+            <p class="card-text">
+              Some quick example text to build on the card title.
+            </p>
+          </div>
+        </div>
+        <div class="card m-5" style="width: 18rem; border: none">
+          <img
+            src="{% static 'portokal.jpg' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Visit the clean farm in the USA</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid bg-secondary-subtle p-5">
+        <div class="row">
+          <div class="col-4">
+            <ul class="list-unstyled">
+              <h5 class="fw-bold">FINKI Exam</h5>
+              <li>Organization</li>
+              <li>Departments</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <ul class="list-unstyled">
+              <h5 class="fw-bold">Studies</h5>
+              <li>Bachelors</li>
+              <li>Masters</li>
+              <li>PhD</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <ul class="list-unstyled">
+              <h5 class="fw-bold">Staff</h5>
+              <li>Administrative</li>
+              <li>Teaching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

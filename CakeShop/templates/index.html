@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row bg-danger p-5">
+        <div class="col p-5">
+            <h1 class="text-light">Explore the wonderland of tastes!</h1>
+            <p class="text-light">Assigment for HCI Exam in January 2025</p>
+            <div class="d-flex">
+                <button class="btn btn-light">Get started</button>
+                <button class="btn btn-outline-light ms-3">Learn more</button>
+            </div>
+        </div>
+        <div class="col">
+            <img src="{% static 'Screenshot_1.png' %}" style="width: 550px; height: 400px"/>
+        </div>
+    </div>
+    <div class="row p-3 justify-content-center bg-secondary-subtle">
+        <p class="w-50 text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has
+            been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p class="fw-bold text-center">John / CEO, Cakery&Bakery</p>
+    </div>
+    <div class="row p-4 justify-content-center">
+        <h1 class="text-danger fw-bold text-center">Products</h1>
+        <p class="text-center">Add more products in the edit form!</p>
+    </div>
+
+    <div class="row">
+        {% for cake in cakes %}
+            <div class="col-4 px-5">
+                <div class="card">
+                    {% if cake.image %}
+                        <img src="{{ cake.image.url }}" class="card-img-top" alt="{{ cake.name }}">
+                    {% else %}
+                        <img src="{% static 'Screenshot_1.png' %}" class="card-img-top" alt="Default cake image">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ cake.name }}</h5>
+                        <p class="card-text">{{ cake.description }}</p>
+                        <p>{{ cake.baker }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
