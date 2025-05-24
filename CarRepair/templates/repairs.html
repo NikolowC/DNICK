@@ -1,0 +1,78 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}" />
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body>
+    <div
+      class="container-fluid"
+      style="
+        background-image: url('/static/default.jpg');
+        background-size: cover;
+        height: 600px;
+      "
+    >
+      <div class="row">
+        <div class="col">
+          <h1 class="fw-bold text-white w-25 ms-5 mt-5">
+            HONEST, QUALITY WORK AT AFFORDABLE PRICES
+          </h1>
+          <h6 class="fw-bold text-white w-25 ms-5 mt-5">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </h6>
+          <button class="btn btn-primary ms-5 mt-5 p-2 fw-bold">
+            GET FREE QUOTES
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        {% for repair in repairs %}
+        <div class="col-4">
+          <div
+            class="card mt-5"
+            style="width: 350px; border: none; background-color: black"
+          >
+            <img
+              src="{{repair.image.url}}"
+              class="card-img-top"
+              alt="..."
+              style="width: 350px; height: 300px"
+            />
+            <div class="card-body text-white">
+              <h5 class="card-title">{{repair.code}}</h5>
+              <p class="card-text">{{repair.car.car_type}}</p>
+              <p class="card-text">{{repair.description}}</p>
+              <a
+                href="#"
+                class="btn btn-outline-danger w-25"
+                style="border: 3px solid"
+                >Fix</a
+              >
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+      <form
+        method="post"
+        action="{% url 'repairs' %}"
+        enctype="multipart/form-data"
+        class="p-5 w-75 bg-light mb-5 mt-5"
+      >
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

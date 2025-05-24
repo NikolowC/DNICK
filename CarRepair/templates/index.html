@@ -1,0 +1,122 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}" />
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body>
+    <div
+      class="container-fluid"
+      style="
+        background-image: url('/static/default.jpg');
+        background-size: cover;
+        height: 600px;
+      "
+    >
+      <div class="row">
+        <div class="col">
+          <h1 class="fw-bold text-white w-25 ms-5 mt-5">
+            HONEST, QUALITY WORK AT AFFORDABLE PRICES
+          </h1>
+          <h6 class="fw-bold text-white w-25 ms-5 mt-5">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </h6>
+          <button class="btn btn-primary ms-5 mt-5 p-2 fw-bold">
+            GET FREE QUOTES
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="row">
+        <div class="col d-flex flex-column align-items-center">
+          <h1>OUR SERVICES</h1>
+          <p class="w-50 mt-3 text-center">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="row">
+        <div class="col d-flex flex-column align-items-center">
+          <h1>OUR GALLERY</h1>
+          <p class="w-50 mt-3 text-center">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img
+            src="{% static 'slika1.jpg' %}"
+            alt="..."
+            style="width: 400px; height: 400px"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="{% static 'slika2.jpg' %}"
+            alt="..."
+            style="width: 400px; height: 400px"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="{% static 'slika3.jpg' %}"
+            alt="..."
+            style="width: 400px; height: 400px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex justify-content-center mt-4">
+      <a class="btn btn-outline-secondary fw-bold p-2">SEE FULL GALLERY</a>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-6">
+          <img
+            src="{% static 'slika4.jpg' %}"
+            alt="..."
+            style="width: 300px; height: 450px"
+            class="m-3"
+          />
+          <img
+            src="{% static 'slika4.jpg' %}"
+            alt="..."
+            style="width: 300px; height: 450px"
+          />
+        </div>
+        <div class="col-6 mt-3">
+          <h1 class="fw-bold">LONG TERM WARRANTIES AND COMPETITIVE PRICES</h1>
+          <p class="w-75 mt-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
+          <p class="w-75 mt-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
+          <a href="{% url 'repairs' %}" class="btn btn-primary fw-bold"
+            >SEE ALL OUR OFFERS</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
